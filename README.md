@@ -16,7 +16,7 @@ Se debe tener en cuenta que la maquina virtual va ser el servidor central, esta 
 ## ***TRAFICO EN ZABBIX*** <br>
 <p align="center"><img width="45%" height="265" alt="image" src="https://github.com/user-attachments/assets/ea9a60ee-017f-4ef4-a543-0ea007866b4c" /><img width="45%" height="163" alt="image" src="https://github.com/user-attachments/assets/ab7bd185-524a-434a-bbb4-46265d2f7e2c" /><img width="45%" height="248" alt="image" src="https://github.com/user-attachments/assets/5931d1f0-0f94-40fd-b67d-2b8e28651aa9" /><img width="45%" height="210" alt="image" src="https://github.com/user-attachments/assets/f0040d01-f0e4-4c39-a445-3499f72a92d4" /><img width="593" height="45%" alt="image" src="https://github.com/user-attachments/assets/e8d42ee2-b1f3-4d46-8f1a-79a9f016444b" /></p><br><br>
 
-***CONTENEDORES*** <br>
+### ***CONTENEDORES*** <br>
 A continuación se explica en imagenes que se debe realizar para la descarga de los contenedores que se van ha utilizar como subredes, con el fin de enviar trafico desde la subred hacia el servidor administrador y viceversa, eso se debe evidenciar en la herramienta de monitoreo. Para ello desde Windows se debe abrir PowerShell y ejecutarlo como administrador, luego ejecutar el comando *wsl ---install* este comando es como tener una maquina virtual UBUNTU, después de instalar, ahora debemos ejecutar los comandos de instalación de docker, en este caso se realizo isntalación de DOCKER en el PC, para que al ejecutar un comando me trajiera desde el servidor los contenedores que requiero, en las imagenes se evidencia lo escrito.<br>
 
 <p align="center"><img width="45%" height="656" alt="image" src="https://github.com/user-attachments/assets/13871096-695a-484d-bd79-06cd8fb4a901" /><img width="45%" height="508" alt="image" src="https://github.com/user-attachments/assets/6c1ab35a-0d7a-4efc-a3a1-181a7847af01" /><img width="45%" height="714" alt="image" src="https://github.com/user-attachments/assets/e33a765c-38fe-4cc5-897f-d03fbc70f076" /></p> <br>
@@ -26,5 +26,13 @@ Se crean las subredes con los siguientes comandos en UBUNTU <br>
 **docker network connect subred2 nodo-kali** <br><br>
 
 Luego se valida que los dos conectenedores esten activos y que se puedan ejecutar como se muestra en la imagen
-<img width="974" height="505" alt="image" src="https://github.com/user-attachments/assets/5a92c8e7-103f-469b-9116-94a0ee94547b" />
+<img width="974" height="505" alt="image" src="https://github.com/user-attachments/assets/5a92c8e7-103f-469b-9116-94a0ee94547b" /><br><br>
+
+<img width="1046" height="546" alt="image" src="https://github.com/user-attachments/assets/70d10851-73d7-4811-b3d1-368a5738007d" />
+Ahora se debe configurar un SWITCH CISCO con los parámetros establecidos en la imagen, a continuación se deja la evidencia de la configuración del SWITCH como lo requieren.<br>
+<img width="774" height="406" alt="image" src="https://github.com/user-attachments/assets/67a9a78c-ed13-42ef-89e7-61e0993d75f5" />
+Se ejecutan comandos de abreviación donde solo muestra la configuración requerida y no toda la configuración en general. Configuración de interfaces por rango de la G1/0/1 hasta la G1/0/10 con Vlan 10 en acceso, luego el rango de la G1/0/11 hasta la G1/0/20 con Vlan 20 en acceso también y esos puertos con protocolo (STP) que traduce Spanning-tree Protocolo, lo cual traduce redundancia entre equipos.<br><br>
+
+<img width="826" height="339" alt="image" src="https://github.com/user-attachments/assets/31e9b340-4e74-45b2-907f-2873d824a881" /><br><br>
+
 
