@@ -33,6 +33,5 @@ Ahora se debe configurar un SWITCH CISCO con los parámetros establecidos en la 
 <img width="774" height="406" alt="image" src="https://github.com/user-attachments/assets/67a9a78c-ed13-42ef-89e7-61e0993d75f5" />
 Se ejecutan comandos de abreviación donde solo muestra la configuración requerida y no toda la configuración en general. Configuración de interfaces por rango de la G1/0/1 hasta la G1/0/10 con Vlan 10 en acceso, luego el rango de la G1/0/11 hasta la G1/0/20 con Vlan 20 en acceso también y esos puertos con protocolo (STP) que traduce Spanning-tree Protocolo, lo cual traduce redundancia entre equipos.<br><br>
 
-<img width="826" height="339" alt="image" src="https://github.com/user-attachments/assets/31e9b340-4e74-45b2-907f-2873d824a881" /><br><br>
-
-
+<img width="826" height="339" alt="image" src="https://github.com/user-attachments/assets/31e9b340-4e74-45b2-907f-2873d824a881" />
+Para finalizar la configuración del SWITCH se deben ejecutar comandos para SNMP(Protocolo simple de administración de red) o también conocido como Simple Network Management Protocol, el cual usa el puerto UDP 161 y 162, este protocolo usa v2 y v3 la diferencia es su seguridad avanzada en cifrado y autenticación, por otro lado esta el comando de encapsulación TRUNK, el cual encapsula las Vlan 10 y 20, también se tiene la interface Vlan 1 la cual se le asigna direccionamiento 192.168.139.131/24 la cual pertenece a Zabbix, herramienta de monitoreo, también tenemos que esta IP ya escrita se encuentra en el comando de ip default-gateway, adicinal el segmento en el comando de snmp-server, tenemos la IP 192.168.100.50 que es una IP del segmento del servidor principal.
